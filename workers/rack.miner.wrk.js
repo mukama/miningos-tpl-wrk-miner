@@ -110,7 +110,7 @@ class WrkMinerRack extends WrkRack {
 
   _validateRegisterThing (data) {
     super._validateRegisterThing(data)
-    if (!data.opts) {
+    if (!data.opts && !this._isMinerOutsideContainerLocation(data)) {
       throw new Error('ERR_THING_VALIDATE_OPTS_INVALID')
     }
     this._validateMinerDataChange(data)
